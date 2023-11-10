@@ -6,29 +6,44 @@ let wins = 0;
 let losses = 0;
 let  ties = 0
 
-// define var for player choice
 // prompt  player to choose
+const playerChoice = prompt('Choose either "R" for Rock, "P" for Paper , or "S" for Scissors');
+console.log('player chooses:' + playerChoice);
 
-
-// define var for computer choice
 // computer chooses randomly 
+const random = Math.floor(Math.random()*choices.length);
+const computerChoice = choices[random];
+console.log('computer chooses:' + computerChoice);
 
 // compare choices 
   // if player choice is equal to computer choice(tie) 
+  if ( playerChoice === computerChoice ){
     // increase the tie variable by 1 
+    ties++;
     //  display result 
- 
-
-  // also if player choice beats computer choice(win)
+    (alert("You tied!👔"))
+    // also if player choice beats computer choice(win)
+  } else if (
     // player choice = Rock && computer choice = Scissors
+    ( playerChoice === "R" && computerChoice === "S")||
     // player choice = Paper && computer choice = Rock
+    ( playerChoice === "P" && computerChoice === "R")||
     // player choice = Scissors && computer choice = Paper
-    // increase the win variable by 1
-    // display result
-
-      // any other combinations result in the (loss) of the player 
-      // increase the loss variable by 1
+    ( playerChoice === "S" && computerChoice === "P")
+    ){
+      // increase the win variable by 1
+      wins++;
       // display result
+      alert("Congratulations, You Won!🏆🥇")
+      // any other combinations result in the (loss) of the player 
+    } else {
+      // increase the loss variable by 1
+      losses++;
+      // display result
+      alert("Awwww! You lost to a Bot!😭")
+    }
+    
+
   
 
 
