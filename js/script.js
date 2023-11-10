@@ -21,7 +21,7 @@ console.log('computer chooses:' + computerChoice);
     // increase the tie variable by 1 
     ties++;
     //  display result 
-    (alert("You tied!👔"))
+    result = "You tied!👔"
     // also if player choice beats computer choice(win)
   } else if (
     // player choice = Rock && computer choice = Scissors
@@ -34,13 +34,13 @@ console.log('computer chooses:' + computerChoice);
       // increase the win variable by 1
       wins++;
       // display result
-      alert("Congratulations, You Won!🏆🥇")
+      result = "Congratulations, You Won!🏆🥇"
       // any other combinations result in the (loss) of the player 
     } else {
       // increase the loss variable by 1
       losses++;
       // display result
-      alert("Awwww! You lost to a Bot!😭")
+      result = "Awwww! You lost to a Bot!😭"
     }
     
 
@@ -48,8 +48,10 @@ console.log('computer chooses:' + computerChoice);
 
 
 //  display (alert) ccomparison result ( win!, Tie, Loose  round)
+alert("You" + result)
 
 // show stats( number of wins , losses, ties)
+alert ("Score: \nWins: " + wins + "\nLosses: " + losses + "\nTies: " + ties)
 
 // play again 
   // restartgame
