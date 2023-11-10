@@ -10,6 +10,22 @@
 // computer chooses randomly 
 
 // compare choices 
+  // if player choice is equal to computer choice(tie) 
+    // increase the tie variable by 1 
+    //  display result 
+ 
+
+  // also if player choice beats computer choice(win)
+    // player choice = Rock && computer choice = Scissors
+    // player choice = Paper && computer choice = Rock
+    // player choice = Scissors && computer choice = Paper
+    // increase the win variable by 1
+    // display result
+
+      // any other combinations result in the (loss) of the player 
+      // increase the loss variable by 1
+      // display result
+  
 
 
 //  display (alert) ccomparison result ( win!, Tie, Loose  round)
