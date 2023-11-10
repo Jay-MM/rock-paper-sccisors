@@ -6,6 +6,10 @@ let wins = 0;
 let losses = 0;
 let  ties = 0
 
+// while loop allows the game to continue
+let keepPlaying = true;
+
+while (keepPlaying) {
 // prompt  player to choose
 const playerChoice = prompt('Choose either "R" for Rock, "P" for Paper , or "S" for Scissors');
 console.log('player chooses:' + playerChoice);
@@ -53,7 +57,14 @@ alert("You" + result)
 // show stats( number of wins , losses, ties)
 alert ("Score: \nWins: " + wins + "\nLosses: " + losses + "\nTies: " + ties)
 
-// play again 
-  // restartgame
+// play again
+// restartgame
 // else
-  // end game 
+// end game 
+keepPlaying = confirm("Want to play again?")
+if (keepPlaying){
+  continue
+}else{
+  alert("Thanks for playing!")
+}
+}
