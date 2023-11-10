@@ -1,12 +1,16 @@
-// define array to hold choices [rock,paper,scissors]
-//define var for player choice
-// define var for computer choice
-// define var for wins
-// define var for  losses
-// define var for  ties
+// global variables 
+  // array to hold choices [rock,paper,scissors]
+const choices = ["R", "P", "S"];
+  // define var for wins, losses, ties
+let wins = 0;
+let losses = 0;
+let  ties = 0
 
+// define var for player choice
 // prompt  player to choose
 
+
+// define var for computer choice
 // computer chooses randomly 
 
 // compare choices 
