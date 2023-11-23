@@ -14,24 +14,27 @@
     <h2>  Click an option to start the game</h2>
   </header>
 
-  <main class="bg-dark">
+  <main class="bg-dark px-3">
     <section class="pt-5 d-flex justify-content-between">
-      <h4>Player Score: 0</h4>
-      <h4>Bot Score: 0</h4>
+      <h4>Player Score:<span id="player-score">0</span></h4>
+      <h4>Bot Score: <span id="bot-score"></span>0</h4>
     </section>
-    <section class="row d-flex align-items-center">
-      <div class="col-4">
+
+    <section class="row d-flex align-items-center" id="choices-container">
+      <div class="col-4" id="rock">
         <img src="assets/rock.png" alt="paper pixelgraph" width="777px">
       </div>
 
-      <div class="col-4">
+      <div class="col-4" id="paper">
         <img src="assets/paper.png" alt="rock pixelgraph" width="777px">
       </div>
 
-      <div class="col-4">
+      <div class="col-4" id="scissors">
         <img src="assets/scissors.png" alt="scissors pixelgraph" width="777px">
       </div>
     </section>
+
+    <div id="result"></div>
   </main>
   <footer class="d-flex flex-column align-items-center bg-primary">
     <h6 class="mb-2">
