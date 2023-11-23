@@ -1,6 +1,6 @@
 :root {
   --custom-blue: #0d6f72a1;
-  --custom-grey: #ffd700;
+  --custom-gold: #ffd700;
   --custon-maroon: #a32638;
   
 }
@@ -35,7 +35,7 @@ h1 {
   font-family: 'Audiowide', sans-serif;
 font-family: 'Oswald', sans-serif;
 font-family: 'Vina Sans', sans-serif;
-font-size: 66px
+font-size: 66px;
 }
 
 h4, h2 {
@@ -43,4 +43,29 @@ h4, h2 {
 font-family: 'Oswald', sans-serif;
 font-family: 'Vina Sans', sans-serif;
 font-size: 42px
+}
+
+h1, h2 {
+  color: var(--custom-gold);
+  background-color: rgb(53, 64, 63);
+  border: 3px solid;
+  padding-left: 21px;
+ padding-right: 21px;
+}
+
+h4 {
+  color: var(--custon-maroon);
+  background-color: rgb(53, 64, 63);
+  border: 3px solid;
+ padding-left: 9px;
+ padding-right: 9px;
+}
+
+.options {
+  cursor: pointer;
+  transition: all 260ms ease-out;
+}
+
+.options:hover {
+  transform: scale(1.2);
 }
