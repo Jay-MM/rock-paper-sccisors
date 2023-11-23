@@ -4,40 +4,43 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Rock! Paper! Scissors!</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Oswald:wght@200&family=Vina+Sans&display=swap" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
   <link rel = "stylesheet" href="css/style.css">
 </head>
 
-<body class="text-white">
-  <header class="d-flex flex-column align-items-center pb-4 bg-primary border-dark rounded-">
+<body>
+  <header class="d-flex flex-column align-items-center pb-4 border-dark">
     <h1 class="mb-3"> ROCK, PAPER SCISSORS!</h1>
     <h2>  Click an option to start the game</h2>
   </header>
 
-  <main class="bg-dark px-3">
+  <main class=" main-container px-3">
     <section class="pt-5 d-flex justify-content-between">
-      <h4>Player Score:<span id="player-score">0</span></h4>
+      <h4>Player Score: <span id="player-score">0</span></h4>
       <h4>Bot Score: <span id="bot-score"></span>0</h4>
     </section>
 
     <section class="row d-flex align-items-center" id="choices-container">
       <div class="col-4" id="rock">
-        <img src="assets/rock.png" alt="paper pixelgraph" width="777px">
+        <img src="assets/rock.png" alt="paper pixelgraph" class="img-fluid" width="777px">
       </div>
 
       <div class="col-4" id="paper">
-        <img src="assets/paper.png" alt="rock pixelgraph" width="777px">
+        <img src="assets/paper.png" alt="rock pixelgraph" class="img-fluid" width="777px">
       </div>
 
       <div class="col-4" id="scissors">
-        <img src="assets/scissors.png" alt="scissors pixelgraph" width="777px">
+        <img src="assets/scissors.png" alt="scissors pixelgraph" class="img-fluid" width="777px">
       </div>
     </section>
 
     <div id="result"></div>
   </main>
-  <footer class="d-flex flex-column align-items-center bg-primary">
-    <h6 class="mb-2">
+  <footer class="d-flex flex-column align-items-center">
+    <h6>
     If you like this app, check out my other works!
     </h6>
     <ul class="list-inline">

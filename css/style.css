@@ -1,0 +1,46 @@
+:root {
+  --custom-blue: #0d6f72a1;
+  --custom-grey: #ffd700;
+  --custon-maroon: #a32638;
+  
+}
+
+* {
+  vertical-align: baseline;
+  font-weight: inherit;
+  font-family: inherit;
+  font-style: inherit;
+  font-size: 100%;
+  margin:0;
+  padding:0;
+  max-width: 2200px;
+}
+
+.main-container{
+  background-image:url(../assets/field.jpeg);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+header, footer {
+  background-color: var(--custom-blue);
+  
+}
+h1 {
+  font-family: 'Audiowide', sans-serif;
+font-family: 'Oswald', sans-serif;
+font-family: 'Vina Sans', sans-serif;
+font-size: 66px
+}
+
+h4, h2 {
+  font-family: 'Audiowide', sans-serif;
+font-family: 'Oswald', sans-serif;
+font-family: 'Vina Sans', sans-serif;
+font-size: 42px
+}
