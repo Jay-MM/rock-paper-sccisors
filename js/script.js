@@ -1,9 +1,31 @@
 // select elements from DOM
+const playerScoreEl = document.getElementById('player-score');
+const botScoreEl = document.getElementById('bot-score');
+const rock = document.getElementById('rock');
+const paper = document.getElementById('paper');
+const scissors = document.getElementById('scissors');
 // declare choice variables
+const options = ["r", "p", "s"]
 // declare score variables 
+let playerScore = 0;
+let botScore = 0;
 // create function that starts game
-  // if player choice is R
+function startGame() {
+  // define player choice
+  // define bot choice 
+
+  // compare choices
+    // if player choice == bot choice 
+      // display "tie"
+    // else if player chooses "r" and bot chooes "s" ||
+    // if player chooses "p" and bot chooses "r" ||
+    //  if player chooses "s" and bot chooses "p"
+      // display  "You won"
+    // else if player chooses anything else
+      // display "You lost"
+}
 // add event listners for each choice to start the game
+
 
 
 // global variables 
