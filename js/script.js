@@ -4,27 +4,66 @@ const botScoreEl = document.getElementById('bot-score');
 const rock = document.getElementById('rock');
 const paper = document.getElementById('paper');
 const scissors = document.getElementById('scissors');
+
+// declare variables for pixelgraphs
+const pixelgraphs = [rock,paper,scissors]
 // declare choice variables
 const options = ["r", "p", "s"]
 // declare score variables 
 let playerScore = 0;
 let botScore = 0;
-// create function that starts game
-function startGame() {
-  // define player choice
-  // define bot choice 
 
+// create function that starts game
+function startGame(e) {
+  // define player choice
+  const playerPixelgraph = e.target
+  const playerOption = playerPixelgraph.dataset.letter
+  // define bot choice 
+  const random = Math.floor(Math.random()*options.length);
+  const botOption = options[random];
+  const botPixelgraph = document.querySelector('img[data-letter="'+ botOption +'"]')
+
+  // declare variable for the result
+  let result;
   // compare choices
     // if player choice == bot choice 
+    if (playerOption === botOption) {
       // display "tie"
-    // else if player chooses "r" and bot chooes "s" ||
+      playerScore++;
+      botScore++;
+      result = "Its a Tie!👔";
+      // else if player chooses "r" and bot chooes "s" ||
+    } else if (playerOption === "r" && botOption === "s" || 
     // if player chooses "p" and bot chooses "r" ||
+    playerOption === "p" && botOption === "s" ||
     //  if player chooses "s" and bot chooses "p"
-      // display  "You won"
+    playerOption === "s" && botOption === "p"
+    ){;
+    // increase player score by one
+    playerScore++;
+    // display  "You won"
+    result = "Congratulations, You Won!🏆🥇"
     // else if player chooses anything else
-      // display "You lost"
+  } else {
+    botScore++;
+    // display "You lost"
+    result = "Awwww! You lost to a Bot!😭"
+  }
+ 
+  console.log(result)
+  
 }
 // add event listners for each choice to start the game
+rock.addEventListener('click', startGame);
+paper.addEventListener('click', startGame);
+scissors.addEventListener('click', startGame);
+
+
+
+
+
+
+
 
 
 
