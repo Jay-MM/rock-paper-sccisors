@@ -14,30 +14,30 @@
 <body>
   <header class="d-flex flex-column align-items-center pb-4 border-dark">
     <h1 class="mb-3"> ROCK, PAPER SCISSORS!</h1>
-    <h2>  Click an option to start the game</h2>
+    <h2 id="result">  Click an option to start the game</h2>
   </header>
 
   <main class=" main-container px-3">
     <section class="pt-5 d-flex justify-content-between">
-      <h4>Player Score: <span id="player-score">0</span></h4>
-      <h4>Bot Score: <span id="bot-score"></span>0</h4>
+      <h4>Player Score: <span id="player-score"></span></h4>
+      <h4>Bot Score: <span id="bot-score"></span></h4>
     </section>
 
-    <section class="row d-flex align-items-center pt-5" id="choices-container">
-      <div class="options col-4" id="rock">
-        <img src="assets/rock.png" alt="rock pixelgraph" data-letter="r" class="img-fluid" width="777px">
+    
+    <section class="row d-flex align-items-center pt-5" id="options-container">
+      <div class="option col-4" id="rock" data-letter="r">
+        <img src="assets/rock.png" alt="rock pixelgraph"  class="img-fluid" width="777px">
       </div>
 
-      <div class="options col-4" id="paper">
-        <img src="assets/paper.png" alt="paper pixelgraph" data-letter="p" class="img-fluid" width="777px">
+      <div class="option col-4" id="paper" data-letter="p">
+        <img src="assets/paper.png" alt="paper pixelgraph" class="img-fluid" width="777px">
       </div>
 
-      <div class="options col-4" id="scissors">
-        <img src="assets/scissors.png" alt="scissors pixelgraph" data-letter="s" class="img-fluid" width="777px">
+      <div class="option col-4" id="scissors" data-letter="s">
+        <img src="assets/scissors.png" alt="scissors pixelgraph" class="img-fluid" width="777px">
       </div>
     </section>
 
-    <div id="result"></div>
   </main>
   <footer class="d-flex flex-column align-items-center">
     <h6>

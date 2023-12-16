@@ -61,11 +61,21 @@ h4 {
  padding-right: 9px;
 }
 
-.options {
+#options-container {
+  display: flex;
+  justify-content: space-around;
+  margin: 6rem auto 0;
+}
+
+.option {
   cursor: pointer;
   transition: all 260ms ease-out;
 }
 
-.options:hover {
+.option:hover {
   transform: scale(1.2);
+}
+
+.loser {
+  opacity: 0.6;
 }

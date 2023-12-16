@@ -4,6 +4,7 @@ const botScoreEl = document.getElementById('bot-score');
 const rock = document.getElementById('rock');
 const paper = document.getElementById('paper');
 const scissors = document.getElementById('scissors');
+let resultEl = document.getElementById('result');
 
 // declare variables for pixelgraphs
 const pixelgraphs = [rock,paper,scissors]
@@ -13,32 +14,105 @@ const options = ["r", "p", "s"]
 let playerScore = 0;
 let botScore = 0;
 
+function resetGame(){
+  resultEl.textContent = 'Click an option to try again!'
+  pixelgraphs.forEach(function(img) {
+    img.style.display = 'block';
+    img.classList.remove('loser');
+    let spans = img.querySelectorAll('span')
+    for (let i = 0; i < spans.length; i++) {
+      spans[i].remove()
+    }
+  })
+}
+
+function createStyledSpan(text) {
+  const span = document.createElement('span');
+  span.textContent = text;
+  span.style.color = 'red';
+  span.style.fontSize = 'larger';
+  span.style.backgroundColor = 'rgb(53, 64, 63)'
+  return span;
+}
+
+function updateScore() {
+  // Clear the existing content of playerScoreEl and botScoreEl
+  playerScoreEl.innerHTML = '';
+  botScoreEl.innerHTML = '';
+
+  // Append the styled spans to playerScoreEl and botScoreEl
+  playerScoreEl.appendChild(createStyledSpan(playerScore));
+  botScoreEl.appendChild(createStyledSpan(botScore));
+}
+
+function displayResults(playerPixelgraph, botPixelgraph, result) {
+  resultEl.textContent = result;
+  updateScore();
+
+  pixelgraphs.forEach(function (img) {
+    img.style.display = 'none';
+  });
+
+  playerPixelgraph.style.display = 'block';
+  botPixelgraph.style.display = 'block';
+
+  let userSpan = document.createElement('span');
+  userSpan.textContent = 'Player';
+  userSpan.style.color = 'red';
+  userSpan.style.fontSize = 'larger';
+  userSpan.style.backgroundColor = 'rgb(53, 64, 63)'
+  playerPixelgraph.appendChild(userSpan);
+
+  let botSpan = document.createElement('span');
+  botSpan.textContent = 'Bot';
+  botSpan.style.color = 'red';
+  botSpan.style.fontSize = 'larger';
+  botSpan.style.backgroundColor = 'rgb(53, 64, 63)'
+  botPixelgraph.appendChild(botSpan);
+
+  if (result === 'Congratulations, You Won!🏆🥇') {
+    botPixelgraph.classList.add('loser')
+  }else if (result === 'Awwww! You lost to a Bot!😭') {
+    playerPixelgraph.classList.add('loser')
+  }
+  setTimeout(function(){
+    resetGame()
+  },2000)
+}
+
 // create function that starts game
-function startGame(e) {
+function startGame(event) {
   // define player choice
-  const playerPixelgraph = e.target
-  const playerOption = playerPixelgraph.dataset.letter
+  let playerPixelgraph = event.target
+  if (playerPixelgraph.matches('img')){
+    playerPixelgraph = playerPixelgraph.parentElement
+  } else {
+    playerPixelgraph = event.target
+  }
+  let playerOption = playerPixelgraph.dataset.letter
+
   // define bot choice 
-  const random = Math.floor(Math.random()*options.length);
-  const botOption = options[random];
-  const botPixelgraph = document.querySelector('img[data-letter="'+ botOption +'"]')
+  let random = Math.floor(Math.random()*options.length);
+  let botOption = options[random];
+  const botPixelgraph = document.querySelector('[data-letter="'+ botOption +'"]')
 
   // declare variable for the result
   let result;
   // compare choices
-    // if player choice == bot choice 
-    if (playerOption === botOption) {
-      // display "tie"
-      playerScore++;
-      botScore++;
-      result = "Its a Tie!👔";
-      // else if player chooses "r" and bot chooes "s" ||
-    } else if (playerOption === "r" && botOption === "s" || 
-    // if player chooses "p" and bot chooses "r" ||
-    playerOption === "p" && botOption === "s" ||
-    //  if player chooses "s" and bot chooses "p"
-    playerOption === "s" && botOption === "p"
-    ){;
+  // if player choice == bot choice 
+  if (playerOption === botOption) {
+    // display "tie"
+    playerScore++;
+    botScore++;
+    result = "Its a Tie!👔";
+    // else if player chooses "r" and bot chooes "s" ||
+  } else if (
+  (playerOption === "r" && botOption === "s") ||
+  // if player chooses "p" and bot chooses "r" ||
+  (playerOption === "p" && botOption === "r") ||
+  //  if player chooses "s" and bot chooses "p"
+  (playerOption === "s" && botOption === "p")
+  ){
     // increase player score by one
     playerScore++;
     // display  "You won"
@@ -49,10 +123,13 @@ function startGame(e) {
     // display "You lost"
     result = "Awwww! You lost to a Bot!😭"
   }
+  
  
   console.log(result)
   
+ displayResults(playerPixelgraph, botPixelgraph, result)
 }
+
 // add event listners for each choice to start the game
 rock.addEventListener('click', startGame);
 paper.addEventListener('click', startGame);
