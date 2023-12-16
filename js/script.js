@@ -77,7 +77,7 @@ function displayResults(playerPixelgraph, botPixelgraph, result) {
   }
   setTimeout(function(){
     resetGame()
-  },2000)
+  },1000)
 }
 
 // create function that starts game
