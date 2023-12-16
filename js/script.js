@@ -11,10 +11,12 @@ const pixelgraphs = [rock,paper,scissors]
 // declare choice variables
 const options = ["r", "p", "s"]
 // declare score variables 
+let clickable = true;
 let playerScore = 0;
 let botScore = 0;
 
 function resetGame(){
+  clickable = true;
   resultEl.textContent = 'Click an option to try again!'
   pixelgraphs.forEach(function(img) {
     img.style.display = 'block';
@@ -46,6 +48,7 @@ function updateScore() {
 }
 
 function displayResults(playerPixelgraph, botPixelgraph, result) {
+  clickable = false;
   resultEl.textContent = result;
   updateScore();
 
@@ -82,6 +85,7 @@ function displayResults(playerPixelgraph, botPixelgraph, result) {
 
 // create function that starts game
 function startGame(event) {
+  if (!clickable) return;
   // define player choice
   let playerPixelgraph = event.target
   if (playerPixelgraph.matches('img')){
