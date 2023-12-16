@@ -19,6 +19,7 @@ this project does not need to be installed.
 ## [Usage](#table-of-contents)
 
 Navigate to the URL and play!
+![r-p-s-screenshot](screenshot.png)
 
 ## [Credits](#table-of-contents)
 
