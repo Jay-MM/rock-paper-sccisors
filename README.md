@@ -18,7 +18,7 @@ this project does not need to be installed.
 
 ## [Usage](#table-of-contents)
 
-Navigate to the URL and play!
+Navigate to the URL [here](https://jay-mm.github.io/rock-paper-sccisors/)  and play!
 ![r-p-s-screenshot](assets/screenshot.png)
 
 ## [Credits](#table-of-contents)
